@@ -11,7 +11,7 @@ int print_str(char *str)
 	unsigned int i = 0;
 
 	if (str == NULL)
-		return (0);
+		str = "(null)";
 
 	while (str[i] != '\0')
 		_putchar(str[i++]);
