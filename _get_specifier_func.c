@@ -1,4 +1,4 @@
-#include "main.h"
+include "main.h"
 
 /**
  * get_specifier_func - returns a pointer to a func
@@ -15,6 +15,7 @@ int (*get_specifier_func(char Specifier))(va_list ap)
 		{'r', print_rev},
 		{'d', print_int},
 		{'i', print_int},
+		{'u', print_unsigned},
 		{'b', print_bin},
 		{'R', print_rot13},
 		{'p', print_pointer},
@@ -22,7 +23,7 @@ int (*get_specifier_func(char Specifier))(va_list ap)
 		{'X', print_HEXA},
 		{'\0', NULL}
 	};
-	while (i < 9)
+	while (i < 10)
 	{
 
 		if (specifiers[i].spec == Specifier)
