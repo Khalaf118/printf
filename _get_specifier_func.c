@@ -15,17 +15,17 @@ int (*get_specifier_func(char Specifier))(va_list ap)
 		{'r', print_rev},
 		{'d', print_int},
 		{'i', print_int},
-		{'u', print_unsigned},
 		{'b', print_bin},
 		{'R', print_rot13},
 		{'p', print_pointer},
 		{'x', print_hexa},
 		{'X', print_HEXA},
+		{'u', print_unsigned},
+		{'o', print_octal},
 		{'\0', NULL}
 	};
-	while (i < 10)
+	while (i < 11)
 	{
-
 		if (specifiers[i].spec == Specifier)
 			return (specifiers[i].func);
 		i++;
