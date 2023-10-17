@@ -22,9 +22,10 @@ int (*get_specifier_func(char Specifier))(va_list ap)
 		{'X', print_HEXA},
 		{'u', print_unsigned},
 		{'o', print_octal},
+		{'S', print_hidden_str},
 		{'\0', NULL}
 	};
-	while (i < 11)
+	while (i < 12)
 	{
 		if (specifiers[i].spec == Specifier)
 			return (specifiers[i].func);
