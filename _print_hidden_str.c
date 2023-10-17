@@ -17,7 +17,7 @@ int print_hidden_str(va_list list)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] < 32)
+		if (str[i] > 0 && str[i] <= 15)
 		{
 			_putchar('\\');
 			_putchar('x');
@@ -25,7 +25,7 @@ int print_hidden_str(va_list list)
 			counter += 3;
 			counter += print_HEXA_recursion((unsigned int)(str[i]));
 		}
-		else if (str[i] >= 127)
+		else if ((str[i] >= 16 && str[i] < 32) || str[i] >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');
