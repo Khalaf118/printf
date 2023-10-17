@@ -8,7 +8,7 @@
 
 int print_long_hexa_rec(unsigned long int num)
 {
-	int count = 0;
+	int count = 0, reminder;
 
 	if (num == 0)
 	{
@@ -17,7 +17,7 @@ int print_long_hexa_rec(unsigned long int num)
 
 	count += 1 + print_hexa_recursion(num / 16);
 
-	int reminder = num % 16;
+	reminder = num % 16;
 
 	if (reminder < 10)
 	{
