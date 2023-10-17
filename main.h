@@ -29,7 +29,7 @@ int print_rot13(va_list list);
 /*number functions*/
 int print_int(va_list list);
 int print_bin(va_list list);
-int print_unsigned(va_list list)
+int print_unsigned(va_list list);
 int print_hexa(va_list list);
 int print_HEXA(va_list list);
 int print_pointer(va_list list);
