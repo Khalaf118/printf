@@ -17,9 +17,12 @@ int (*get_specifier_func(char Specifier))(va_list ap)
 		{'i', print_int},
 		{'b', print_bin},
 		{'R', print_rot13},
+		{'p', print_pointer},
+		{'x', print_hexa},
+		{'X', print_HEXA},
 		{'\0', NULL}
 	};
-	while (i < 6)
+	while (i < 9)
 	{
 
 		if (specifiers[i].spec == Specifier)
