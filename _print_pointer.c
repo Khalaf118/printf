@@ -15,7 +15,7 @@ int print_long_hexa_rec(unsigned long int num)
 		return (0);
 	}
 
-	count += 1 + print_hexa_recursion(num / 16);
+	count += 1 + print_long_hexa_rec(num / 16);
 
 	reminder = num % 16;
 
