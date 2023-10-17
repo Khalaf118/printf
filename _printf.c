@@ -10,43 +10,39 @@ int _printf(const char *format, ...)
 {
 	va_list ptr;
 	int counter = 0;
+	int (*specifer)(va_list);
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(ptr, format);
+
 	while (*format != '\0')
 	{
 		if (*format != '%')
 			counter += _putchar(*format);
 		else
 		{
-			switch (*++format)
+			format++;
+			if (*format == '%')
+				counter += _putchar('%');
+			else if (*format == 'c')
+				counter += _putchar(va_arg(ptr, int));
+			else
 			{
-				case 'c':
-					counter += _putchar(va_arg(ptr, int));
-					break;
-				case '%':
+				specifer = get_specifier_func(*format);
+				if (specifer != NULL)
+					counter += specifer(ptr);
+				else
+				{
 					counter += _putchar('%');
-					break;
-				case 's':
-					counter += print_str(va_arg(ptr, char *));
-					break;
-				case 'd': case 'i':
-					counter += print_int(va_arg(ptr, int));
-					break;
-				case 'b':
-					counter += print_bin(va_arg(ptr, unsigned int));
-					break;
-				default:
-					_putchar('%');
-					_putchar(*format);
-					counter += 2;
+					counter += _putchar(*format);
+				}
 			}
 		}
 		format++;
 	}
+
 	va_end(ptr);
 	return (counter);
 }
-
 

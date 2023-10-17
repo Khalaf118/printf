@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * print_bin - print binary representation of an unsigned int
- * @num: number to print in binary
- * Return: number of chars printed
- * Description: print binary of an unsigned int to the printf function using %b
+ * print_bin - prints a binary number from va_list
+ * @args: argument list to be converted to unsigned int
+ * Return: number of characters printed
  */
 
-int print_bin(unsigned int num)
+int print_bin(va_list args)
 {
+	unsigned int num = va_arg(args, unsigned int);
 	int i = 0, count = 0;
 	char bin[33];
 
@@ -36,5 +36,4 @@ int print_bin(unsigned int num)
 	return (count);
 
 }
-
 
