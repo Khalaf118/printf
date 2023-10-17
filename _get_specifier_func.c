@@ -12,6 +12,7 @@ int (*get_specifier_func(char Specifier))(va_list ap)
 
 	specifiers_t specifiers[] = {
 		{'s', print_str},
+		{'r', print_rev},
 		{'d', print_int},
 		{'i', print_int},
 		{'b', print_bin},

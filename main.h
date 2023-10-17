@@ -17,10 +17,14 @@ typedef struct specifiers
 } specifiers_t;
 
 int _putchar(char c);
+int (*get_specifier_func(char Specifier))(va_list);
+
 int _printf(const char *format, ...);
 int print_str(va_list list);
 int print_int(va_list list);
 int print_bin(va_list list);
-int (*get_specifier_func(char Specifier))(va_list);
+int print_rot13(va_list list);
+int print_rev(va_list list);
+
 #endif /* MAIN_H */
 
