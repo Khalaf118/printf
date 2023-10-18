@@ -24,7 +24,6 @@ int print_unsigned(va_list list)
 		num = num / 10;
 		i++;
 	}
-
 	bin[i] = '\0';
 	count = i;
 
