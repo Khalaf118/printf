@@ -29,9 +29,7 @@ int print_bin(va_list args)
 	count = i;
 
 	for (i = i - 1; i >= 0; i--)
-	{
 		_putchar(bin[i]);
-	}
 
 	return (count);
 
