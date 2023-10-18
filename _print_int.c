@@ -9,7 +9,7 @@ int print_int(va_list list)
 {
 	int num = va_arg(list, int);
 	int num_len = 0, tmp = num, flag = 1, i = 0;/*flag to handle +ve -ve*/
-	char *num_to_str;/* decalring vars num_len, tmp to save the value of num*/
+	char *num_to_str;/* decalring num_len, tmp to save the value of num*/
 
 	if (num == -2147483648)
 	{
